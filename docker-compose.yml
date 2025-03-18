@@ -2,13 +2,12 @@ version: '3'
 
 services:
   app:
-    container_name: introduction-bicep
+    container_name: dev-web3-opensea-app
     build: 
       context: .
       dockerfile: Dockerfile
     tty: true
     volumes:
-      - ${HOME}/.ssh:/root/.ssh
       - type: bind
         source: .
         target: /src

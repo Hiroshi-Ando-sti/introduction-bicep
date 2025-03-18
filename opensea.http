@@ -1,0 +1,89 @@
+@BASE_URL=https://testnets-api.opensea.io
+@BASE_PATH=/api/v2
+
+# https://testnets.opensea.io
+# https://www.postman.com/dark-comet-139991/maketplace-nft-opensea-js/request/u59hz3d/https-testnets-api-opensea-io-api-v1-collections
+
+### GET /accounts/{address_or_username}
+@address=0xCebC36de334CE12dFD08f4C39E833016263Ba5B0
+GET {{BASE_URL}}{{BASE_PATH}}/accounts/{{address}} HTTP/1.1
+
+
+### GET /collections/{collection_slug}
+# @collection_slug=apenft-187
+GET {{BASE_URL}}{{BASE_PATH}}/collections/{{collection_slug}} HTTP/1.1
+
+### GET /collections
+
+GET {{BASE_URL}}{{BASE_PATH}}/collections HTTP/1.1
+
+
+
+### GET /chain/{chain}/contract/{address}
+@chain=sepolia
+##@contract_address=0xff3a8a5b3c8c59461000082bef0e902ae41f12bb
+@contract_address=0xE88Df35e01e3e33Df38FB0B5e324282feCeb20c2
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+# GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/contract/{{contract_address}} HTTP/1.1
+GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/contract/{{contract_address}} HTTP/1.1
+
+### GET /chain/{chain}/contract/{address}/nfts/{identifier}
+@chain=sepolia
+@contract_address=0xE88Df35e01e3e33Df38FB0B5e324282feCeb20c2
+@identifier=2
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/contract/{{contract_address}}/nfts/{{identifier}} HTTP/1.1
+
+### Get NFTs (by account)
+### GET /chain/{chain}/account/{address}/nfts
+@chain=sepolia
+@address=0xCebC36de334CE12dFD08f4C39E833016263Ba5B0
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/account/{{address}}/nfts HTTP/1.1
+
+### Get NFTs (by collection)
+### GET /collection/{collection_slug}/nfts
+@collection_slug=hiroshinft
+GET {{BASE_URL}}{{BASE_PATH}}/collection/{{collection_slug}}/nfts HTTP/1.1
+
+### Get NFTs (by contract)
+### GET /chain/{chain}/contract/{address}/nfts
+@chain=sepolia
+@contract_address=0xE88Df35e01e3e33Df38FB0B5e324282feCeb20c2
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/contract/{{contract_address}}/nfts HTTP/1.1
+
+
+### Get Payment Token
+### GET /chain/{chain}/payment_token/{address}
+@chain=sepolia
+# @contract_address=0xff3a8a5b3c8c59461000082bef0e902ae41f12bb
+@contract_address=0xE88Df35e01e3e33Df38FB0B5e324282feCeb20c2
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+GET {{BASE_URL}}{{BASE_PATH}}/chain/{{chain}}/payment_token/{{contract_address}}/nfts HTTP/1.1
+
+
+### Get Traits
+### GET /traits/{collection_slug}
+# @contract_address=0xff3a8a5b3c8c59461000082bef0e902ae41f12bb
+# @chain=ape_curtis
+# @contract_address=0x7ae9102faccf92280fbab47aede104a48c1a052a
+@traits_collection_slug=usernft-14
+GET {{BASE_URL}}{{BASE_PATH}}/traits/{{traits_collection_slug}}/nfts HTTP/1.1
+
+
+
+
+# ### POST /cage
+
+# POST http://{{HOST}}:{{PORT}}{{BASEPATH}}/cage HTTP/1.1
+# Content-Type: application/json
+
+# {
+#   "name": "cage01"
+# }

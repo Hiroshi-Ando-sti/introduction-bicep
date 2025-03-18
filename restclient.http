@@ -1,0 +1,30 @@
+@HOST=localhost
+@PORT=4000
+@BASEPATH=
+
+
+
+### GET /
+
+GET http://{{HOST}}:{{PORT}}{{BASEPATH}}/ HTTP/1.1
+
+
+
+### POST /cage
+
+POST http://{{HOST}}:{{PORT}}{{BASEPATH}}/cage HTTP/1.1
+Content-Type: application/json
+
+{
+  "name": "cage01"
+}
+
+### GET /cage
+
+GET http://{{HOST}}:{{PORT}}{{BASEPATH}}/cage HTTP/1.1
+Content-Type: application/json
+
+### GET /pig
+
+GET http://{{HOST}}:{{PORT}}{{BASEPATH}}/pig/?pageSize=5&bookmark= HTTP/1.1
+Content-Type: application/json
